@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../theme/theme_config.dart';
-import '../../utils/constants.dart';
+import '../../config/themes/theme_config.dart';
+import '../utils/constants.dart';
 
 class ErrorPage extends StatelessWidget {
   const ErrorPage({super.key});

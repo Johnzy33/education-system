@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../ui/components/route_error_page.dart';
+import '../../core/error/route_error_page.dart';
 
 class AppRoutes {
   static const home = '/home';

@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
-import 'package:education_system/data/remote/user_remote.dart';
 
-import '../core/network/NetworkService.dart';
+import '../../../../../config/network/NetworkService.dart';
+import 'user_remote.dart';
 
 /// This calls implements the UserRemote logic
 class UserRemoteImpl extends NetworkService implements UserRemote {

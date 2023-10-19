@@ -1,7 +1,9 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'ffi.dart' if (dart.library.html) 'ffi_web.dart';
+
+import 'core/flutter_rust_bridge_generated/ffi.dart'
+    if (dart.library.html) 'core/flutter_rust_bridge_generated/ffi_web.dart';
 
 void main() {
   runApp(const MyApp());

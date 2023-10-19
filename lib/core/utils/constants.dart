@@ -1,6 +1,6 @@
-import '../data/cache/sharedpreferences.dart';
-import '../services/navigation_service.dart';
-import '../services/routes/locator.dart';
+import '../../features/website_homepage/data/datasources/local/sharedpreferences.dart';
+import '../../config/routes/locator.dart';
+import '../../config/routes/navigation.dart';
 
 ///Global variables
 final NavigationService navigationService = getIt<NavigationService>();

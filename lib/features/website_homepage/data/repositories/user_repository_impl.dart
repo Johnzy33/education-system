@@ -1,6 +1,6 @@
-import 'package:education_system/data/repository/user_repository.dart';
+import 'user_repository.dart';
 
-import '../remote/user_remote.dart';
+import '../datasources/remote/user_remote.dart';
 
 class UserRepositoryImpl extends UserRepository {
   final UserRemote userRemote;

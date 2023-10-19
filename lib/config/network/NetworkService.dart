@@ -1,10 +1,10 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
-import '../../../utils/constants.dart';
-import 'AppInterceptor.dart';
-import 'api_error_handler.dart';
-import 'configs/network_config.dart';
+import '../../core/utils/constants.dart';
+import '../../core/error/AppInterceptor.dart';
+import '../../core/error/api_error_handler.dart';
+import 'network_config.dart';
 
 /// description: A network provider class which manages network connections
 /// between the app and external services. This is a wrapper around [Dio].
