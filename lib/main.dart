@@ -12,7 +12,7 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
+  // TODO:Point this to the root of the homepage
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -77,7 +77,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   );
                 }
 
-                // Guard return here, the data is not ready yet.
+                //! Guard return here, the data is not ready yet.
                 final data = snap.data;
                 if (data == null) return const CircularProgressIndicator();
 
