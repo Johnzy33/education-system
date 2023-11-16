@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import 'core/flutter_rust_bridge_generated/ffi.dart'
     if (dart.library.html) 'core/flutter_rust_bridge_generated/ffi_web.dart';
+import 'features/website_homepage/presentation/pages/home_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,12 +16,14 @@ class MyApp extends StatelessWidget {
   // TODO:Point this to the root of the homepage
   @override
   Widget build(BuildContext context) {
+    TargetPlatform platform = Theme.of(context).platform;
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'education system',
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      home: const MyHomePage(title: 'education system'),
+      home: const WebHomePage(),
     );
   }
 }
@@ -64,7 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text("You're running on"),
+            // const Text("You're running on"),
             FutureBuilder(
               future: (platform, isRelease).join(),
               builder: (context, snap) {

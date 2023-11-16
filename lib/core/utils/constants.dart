@@ -8,10 +8,15 @@ final SharedPreference sharedPreference = SharedPreference();
 
 class AppStrings {
   static String appName = 'Education System';
+  static const List<String> facultiesList = ["SUUU", "SF", "MC", "MV", "G", "SPES", "SAA", "ST", "SMLC"];
 }
 
 class AppImages {
-  static const String appLogo = "assets/images/delivery_onboarding.svg";
+  static const String appLogo = "assets/images/school_logo.png";
+  static const String homeImage = "assets/images/home_image.png";
+  static const String searchIcon = "assets/images/ic_search.svg";
+  static const String studentsIcon = "assets/images/ic_student.svg";
+  static const String deadlinesIcon = "assets/images/ic_deadline.svg";
 }
 
 class AppFontSizes {
