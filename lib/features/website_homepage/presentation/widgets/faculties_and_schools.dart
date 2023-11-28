@@ -80,7 +80,7 @@ class _FacultiesAndSchoolsPageState extends State<FacultiesAndSchoolsPage> {
           const SizedBox(
             height: 30,
           ),
-          ProgramsView(),
+          const ProgramsView(),
           const SizedBox(
             height: 30,
           ),

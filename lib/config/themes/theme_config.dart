@@ -15,6 +15,8 @@ class AppColors {
   static const darkText = Color(0xFF0F1728);
   static const lightGreyText = Color(0xFF667084);
   static const infoBgColor = Color(0x7FEBF0F6);
+  static const footerBg = Color(0xFFFEF5ED);
+
   static const facultiesBgColor = Color(0xFFF8F9FB);
   static const facultiesGreyColor = Color(0xFFDEDDD3);
   static const facultiesYellowColor = Color(0xFFFCC400);

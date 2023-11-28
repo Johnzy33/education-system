@@ -17,6 +17,15 @@ class AppImages {
   static const String searchIcon = "assets/images/ic_search.svg";
   static const String studentsIcon = "assets/images/ic_student.svg";
   static const String deadlinesIcon = "assets/images/ic_deadline.svg";
+  static const String arrowUpRight = "assets/images/arrow-up-right.svg";
+  static const String studentHoldingBooks = "assets/images/student_holding_books.png";
+  static const String appFooterLogo = "assets/images/app_footer_logo.png";
+  static const String lgMapView = "assets/images/lg_map_view.png";
+  static const String facebookIcon = "assets/images/ic_facebook.svg";
+  static const String twitterIcon = "assets/images/ic_twitter.svg";
+  static const String instagramIcon = "assets/images/ic_instagram.svg";
+  static const String youtubeIcon = "assets/images/ic_youtube.svg";
+  static const String linkedinIcon = "assets/images/ic_linkedin.svg";
 }
 
 class AppFontSizes {

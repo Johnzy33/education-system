@@ -7,7 +7,9 @@
 import 'package:education_system/features/website_homepage/presentation/widgets/deadlines.dart';
 import 'package:education_system/features/website_homepage/presentation/widgets/faculties_and_schools.dart';
 import 'package:education_system/features/website_homepage/presentation/widgets/find_choice_course.dart';
+import 'package:education_system/features/website_homepage/presentation/widgets/footer.dart';
 import 'package:education_system/features/website_homepage/presentation/widgets/information_page.dart';
+import 'package:education_system/features/website_homepage/presentation/widgets/learn_more_about_the_school.dart';
 import 'package:education_system/features/website_homepage/presentation/widgets/research.dart';
 import 'package:education_system/features/website_homepage/presentation/widgets/web_top_bar.dart';
 import 'package:flutter/material.dart';
@@ -26,7 +28,6 @@ class _WebHomePageState extends State<WebHomePage> {
       body: SafeArea(
           child: SingleChildScrollView(
         child: Column(
-          // mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             WebTopBarView(),
@@ -34,7 +35,9 @@ class _WebHomePageState extends State<WebHomePage> {
             InformationPage(),
             FacultiesAndSchoolsPage(),
             DeadLinesPage(),
-            ResearchPage()
+            ResearchPage(),
+            LearnMoreAboutSchoolPage(),
+            FooterPage()
           ],
         ),
       )),
