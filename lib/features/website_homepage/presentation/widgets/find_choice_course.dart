@@ -27,7 +27,7 @@ class _FindChoiceCourseState extends State<FindChoiceCourse> {
           fit: BoxFit.cover,
         ),
         Positioned(
-          bottom: 300,
+          bottom: context.getWidth() / 3 - 200,
           child: SizedBox(
             width: context.getWidth() / 2 + 100,
             child: Text(
@@ -43,7 +43,7 @@ class _FindChoiceCourseState extends State<FindChoiceCourse> {
           ),
         ),
         Positioned(
-          bottom: 75,
+          bottom: context.getWidth() / 3 - 350,
           child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16.0),
           child: SizedBox(

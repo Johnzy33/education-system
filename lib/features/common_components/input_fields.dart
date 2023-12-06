@@ -108,3 +108,102 @@ class SearchForm extends StatelessWidget {
     );
   }
 }
+
+class EditTextForm extends StatelessWidget {
+  final String? Function(String?)? validator;
+  final String hint;
+  final bool readonly;
+  final bool? disAbleEdit;
+  final Widget? suffixIcon;
+  final Widget? prefixIcon;
+  final VoidCallback? onTap;
+  final Iterable<String>? autofillHints;
+  final VoidCallback? onEditingComplete;
+  final Function(String)? onFieldSubmitted;
+  final Function(String) onChanged;
+  final TextEditingController controller;
+  final TextInputType? keyboardType;
+  final List<TextInputFormatter>? inputFormatter;
+
+  const EditTextForm(
+      {Key? key,
+        this.readonly = false,
+        required this.hint,
+        required this.onChanged,
+        required this.controller,
+        this.keyboardType = TextInputType.text,
+        this.onTap,
+        this.onEditingComplete,
+        this.onFieldSubmitted,
+        this.inputFormatter,
+        this.validator,
+        this.autofillHints,
+        this.suffixIcon,
+        this.prefixIcon,
+        this.disAbleEdit,
+      })
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+    return Container(
+      height: 60,
+      alignment: Alignment.centerLeft,
+      width: size.width,
+      child: TextFormField(
+        textAlign: TextAlign.start,
+        validator: validator,
+        autofillHints: autofillHints,
+        onEditingComplete: onEditingComplete,
+        onFieldSubmitted: onFieldSubmitted,
+        enableInteractiveSelection: false,
+        maxLines: 1,
+        style: GoogleFonts.inter(
+            fontSize: 14,
+            fontWeight: FontWeight.w400,
+            color: disAbleEdit == true
+                ? AppColors.editTextBorder
+                : AppColors.descriptionTextColor
+        ),
+        onChanged: onChanged,
+        onTap: onTap,
+        readOnly: readonly,
+        autofocus: false,
+        cursorColor: AppColors.white,
+        textInputAction: TextInputAction.next,
+        controller: controller,
+        decoration: InputDecoration(
+          border: InputBorder.none,
+          // fillColor: AppColors.inputFieldBackground,
+          filled: false,
+          suffixIcon: suffixIcon,
+          prefixIcon: prefixIcon,
+          hintText: hint,
+          isDense: true,
+          contentPadding:
+          const EdgeInsets.symmetric(horizontal: 19, vertical: 16),
+          hintStyle: GoogleFonts.inter(
+              fontSize: 14,
+              fontWeight: FontWeight.w400,
+              color: AppColors.descriptionTextColor
+          ),
+          focusedBorder: const OutlineInputBorder(
+              borderRadius: BorderRadius.all(Radius.circular(1.0)),
+              borderSide: BorderSide(color: AppColors.editTextBorder)
+          ),
+          enabledBorder: const OutlineInputBorder(
+              borderRadius: BorderRadius.all(Radius.circular(1.0)),
+              borderSide: BorderSide(color: AppColors.editTextBorder,)
+          ),
+          disabledBorder: const OutlineInputBorder(
+              borderRadius: BorderRadius.all(Radius.circular(1.0)),
+              borderSide: BorderSide(color: AppColors.editTextBorder,)
+          ),
+        ),
+        keyboardType: keyboardType,
+        inputFormatters: inputFormatter,
+      ),
+    );
+  }
+}

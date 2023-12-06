@@ -16,6 +16,7 @@ class AppImages {
   static const String homeImage = "assets/images/home_image.png";
   static const String searchIcon = "assets/images/ic_search.svg";
   static const String studentsIcon = "assets/images/ic_student.svg";
+  static const String hoveredStudentsIcon = "assets/images/hovered_student_icon.svg";
   static const String deadlinesIcon = "assets/images/ic_deadline.svg";
   static const String arrowUpRight = "assets/images/arrow-up-right.svg";
   static const String studentHoldingBooks = "assets/images/student_holding_books.png";
@@ -26,6 +27,8 @@ class AppImages {
   static const String instagramIcon = "assets/images/ic_instagram.svg";
   static const String youtubeIcon = "assets/images/ic_youtube.svg";
   static const String linkedinIcon = "assets/images/ic_linkedin.svg";
+  static const String loginIcon = "assets/images/login_icon.png";
+  static const String supportAgent = "assets/images/support_agent.svg";
 }
 
 class AppFontSizes {

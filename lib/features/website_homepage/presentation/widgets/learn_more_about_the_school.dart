@@ -18,9 +18,11 @@ class _LearnMoreAboutSchoolPageState extends State<LearnMoreAboutSchoolPage> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(color: AppColors.white),
+      width: context.getWidth(),
+      height: context.getHeight() - 80,
+      color: AppColors.white,
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           const SizedBox(
@@ -40,18 +42,21 @@ class _LearnMoreAboutSchoolPageState extends State<LearnMoreAboutSchoolPage> {
           ),
           SizedBox(
               width: context.getWidth(),
-              height: context.getHeight() / 2 + 50,
+              height: context.getHeight() / 2 + 70,
               child: Padding(
-                padding: const EdgeInsets.only(left: 90.0),
+                padding: const EdgeInsets.only(left: 90.0,),
                 child: ListView.builder(
+                    // shrinkWrap: true,
                     scrollDirection: Axis.horizontal,
                     itemCount: 6,
                     itemBuilder: (context, index) {
-                      return const AboutSchoolItems();
+                      return AboutSchoolItems(
+                        onTap: () {},
+                      );
                     }),
               )),
           const SizedBox(
-            height: 100,
+            height: 30,
           ),
         ],
       ),
@@ -59,73 +64,113 @@ class _LearnMoreAboutSchoolPageState extends State<LearnMoreAboutSchoolPage> {
   }
 }
 
-class AboutSchoolItems extends StatelessWidget {
-  const AboutSchoolItems({super.key});
+class AboutSchoolItems extends StatefulWidget {
+  const AboutSchoolItems({super.key, required this.onTap});
+
+  final Function() onTap;
+
+  @override
+  State<AboutSchoolItems> createState() => _AboutSchoolItemsState();
+}
+
+class _AboutSchoolItemsState extends State<AboutSchoolItems> {
+  bool isHovered = false;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: 384,
-      height: context.getHeight() / 3,
-      padding: const EdgeInsets.only(right: 32),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-            width: 384,
-            height: 240,
-            decoration: ShapeDecoration(
-              image: const DecorationImage(
-                image: AssetImage(AppImages.studentHoldingBooks),
-                fit: BoxFit.fill,
-              ),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20),
-              ),
-            ),
-          ),
-          const SizedBox(
-            height: 32,
-          ),
-          Text(
-            'Olivia Rhye • 20 Jan 2022',
-            style: GoogleFonts.inter(
-              color: AppColors.blue,
-              fontSize: 14,
-              fontWeight: FontWeight.w600,
-            ),
-          ),
-          const SizedBox(
-            height: 12,
-          ),
-          Row(
+      padding: const EdgeInsets.only(right: 32, bottom: 10),
+      child: Material(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20),
+        ),
+        color: isHovered ? AppColors.facultiesBgColor : AppColors.white,
+        // shadowColor: AppColors.white,
+        elevation: isHovered ? 8.0 : 0.0,
+        child: InkWell(
+          onTap: widget.onTap,
+          splashColor: Colors.transparent,
+          hoverColor: Colors.transparent,
+          onHover: (value) {
+            setState(() {
+              isHovered = value;
+            });
+          },
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                'Quality',
-                style: GoogleFonts.inter(
-                  color: AppColors.boldText,
-                  fontSize: 24,
-                  fontWeight: FontWeight.w600,
+              Container(
+                width: 384,
+                height: 240,
+                decoration: ShapeDecoration(
+                  image: const DecorationImage(
+                    image: AssetImage(AppImages.studentHoldingBooks),
+                    fit: BoxFit.fill,
+                  ),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.only(
+                      topLeft: const Radius.circular(20),
+                      topRight: const Radius.circular(20),
+                      bottomLeft: Radius.circular(isHovered ? 20 : 1),
+                      bottomRight: Radius.circular(isHovered ? 1 : 20),
+                    ),
+                  ),
                 ),
               ),
-              const Spacer(),
-              SvgPicture.asset(AppImages.arrowUpRight)
+              const SizedBox(
+                height: 30,
+              ),
+              Padding(
+                padding:
+                    EdgeInsets.symmetric(horizontal: isHovered ? 12.0 : 0.0),
+                child: Column(
+                  children: [
+                    Text(
+                      'Olivia Rhye • 20 Jan 2022',
+                      style: GoogleFonts.inter(
+                        color: AppColors.blue,
+                        fontSize: 14,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Row(
+                      children: [
+                        Text(
+                          'Quality',
+                          style: GoogleFonts.inter(
+                            color: AppColors.boldText,
+                            fontSize: 24,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                        const Spacer(),
+                        SvgPicture.asset(AppImages.arrowUpRight)
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Text(
+                      'How do you create compelling presentations that wow your colleagues and impress your managers?',
+                      style: GoogleFonts.inter(
+                        color: AppColors.greyText,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                  ],
+                ),
+              )
             ],
           ),
-          const SizedBox(
-            height: 12,
-          ),
-          Text(
-            'How do you create compelling presentations that wow your colleagues and impress your managers?',
-            style: GoogleFonts.inter(
-              color: AppColors.greyText,
-              fontSize: 16,
-              fontWeight: FontWeight.w400,
-            ),
-          ),
-        ],
+        ),
       ),
+      // ),
     );
   }
 }

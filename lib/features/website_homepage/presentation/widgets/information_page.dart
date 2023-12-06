@@ -5,14 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class InformationPage extends StatefulWidget {
+class InformationPage extends StatelessWidget {
   const InformationPage({super.key});
 
-  @override
-  State<InformationPage> createState() => _InformationPageState();
-}
-
-class _InformationPageState extends State<InformationPage> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -44,22 +39,23 @@ class _InformationPageState extends State<InformationPage> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 90, vertical: 60),
             child: SizedBox(
-              height: context.getHeight() - 150,
-              child: GridView.builder(
-                physics: const NeverScrollableScrollPhysics(),
+                height: context.getHeight() - 150,
+                child: GridView.builder(
+                  physics: const NeverScrollableScrollPhysics(),
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 3,
-                    childAspectRatio: 1.3,
-                    crossAxisSpacing: 30,
-                    mainAxisSpacing: 60,
+                    childAspectRatio: 1.4,
+                    crossAxisSpacing: 20,
+                    mainAxisSpacing: 15,
                   ),
                   itemCount: 6,
-                itemBuilder: (BuildContext context, int index) {
-                  return const InfoItem(
-                    title: 'Prospective Students',
-                    description: 'We always begin by working to uncover and understand our client’s product, business and audience.',
-                  );
-                },)
+                  itemBuilder: (BuildContext context, int index) {
+                    return InfoItem(
+                      title: 'Prospective Students',
+                      description: 'We always begin by working to uncover and understand our client’s product, business and audience.',
+                      onTap: () {},
+                    );
+                  },)
             ),
           ),
         ],
@@ -68,12 +64,17 @@ class _InformationPageState extends State<InformationPage> {
   }
 }
 
-
 class InfoItem extends StatefulWidget {
-  const InfoItem({super.key, required this.title, required this.description});
+  const InfoItem(
+      {super.key,
+        required this.title,
+        required this.description,
+        required this.onTap
+      });
 
   final String title;
   final String description;
+  final Function() onTap;
 
   @override
   State<InfoItem> createState() => _InfoItemState();
@@ -84,34 +85,27 @@ class _InfoItemState extends State<InfoItem> {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onHover: (value) {
-        setState(() {
-          isHovered = value;
-        });
-      },
-      hoverColor: Colors.lightBlue,
-      child: Container(
-        height: 50,
+    return Container(
+        height: 40,
         padding: const EdgeInsets.all(12),
-        decoration: ShapeDecoration(
-          color: isHovered ? Colors.lightBlue : const Color(0x0CF38222),
-          shape: RoundedRectangleBorder(
-            side: const BorderSide(
-              width: 8,
-              strokeAlign: BorderSide.strokeAlignCenter,
-              color: Color(0xFFF9F5FF),
-            ),
-            borderRadius: BorderRadius.circular(28),
-          ),
-        ),
-        child: Column(
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20),
+            color: isHovered ? AppColors.white : Colors.transparent),
+        child: InkWell(
+          onTap: widget.onTap,
+          splashColor: AppColors.white,
+          onHover: (value) {
+            setState(() {
+              isHovered = value;
+            });
+          },
+          child: Column(
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             SvgPicture.asset(
-              AppImages.studentsIcon,
+              isHovered ? AppImages.hoveredStudentsIcon : AppImages.studentsIcon,
             ),
             const SizedBox(height: 20,),
             Text(

@@ -45,9 +45,10 @@ class _DeadLinesPageState extends State<DeadLinesPage> {
                 scrollDirection: Axis.horizontal,
                 itemCount: 6,
                 itemBuilder: (context, index) {
-                  return const DeadLineItem(
+                  return DeadLineItem(
                     months: 'July - September',
                     updates: 'Admissions and applications',
+                    onTap: () {},
                   );
                 }),
           ),
@@ -57,44 +58,72 @@ class _DeadLinesPageState extends State<DeadLinesPage> {
   }
 }
 
-class DeadLineItem extends StatelessWidget {
-  const DeadLineItem({super.key, required this.months, required this.updates});
+class DeadLineItem extends StatefulWidget {
+  const DeadLineItem({
+    super.key,
+    required this.months,
+    required this.updates,
+    required this.onTap
+  });
 
   final String months;
   final String updates;
+  final Function() onTap;
+
+  @override
+  State<DeadLineItem> createState() => _DeadLineItemState();
+}
+
+class _DeadLineItemState extends State<DeadLineItem> {
+  bool isHovered = false;
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       width: 240,
-      child: Column(
-        children: [
-          Text(
-            months,
-            textAlign: TextAlign.center,
-            style: GoogleFonts.roboto(
-              color: const Color(0xFF003366),
-              fontSize: 20,
-              fontWeight: FontWeight.w500,
+      child: InkWell(
+        onTap: widget.onTap,
+        splashColor: Colors.transparent,
+        hoverColor: Colors.transparent,
+        onHover: (value) {
+          setState(() {
+            isHovered = value;
+          });
+        },
+        child: Column(
+          children: [
+            Text(
+              widget.months,
+              textAlign: TextAlign.center,
+              style: GoogleFonts.roboto(
+                color: isHovered
+                    ? AppColors.facultiesLemonText : const Color(0xFF003366),
+                fontSize: 20,
+                fontWeight: FontWeight.w500,
+              ),
             ),
-          ),
-          const SizedBox(
-            height: 6,
-          ),
-          SvgPicture.asset(AppImages.deadlinesIcon),
-          const SizedBox(
-            height: 12,
-          ),
-          Text(
-            updates,
-            textAlign: TextAlign.center,
-            style: GoogleFonts.roboto(
-              color: const Color(0xFF003366),
-              fontSize: 20,
-              fontWeight: FontWeight.w500,
+            const SizedBox(
+              height: 6,
             ),
-          )
-        ],
+            SvgPicture.asset(
+                AppImages.deadlinesIcon,
+              color: isHovered ? null : AppColors.greyText,
+            ),
+            const SizedBox(
+              height: 12,
+            ),
+            Text(
+              widget.updates,
+              textAlign: TextAlign.center,
+              style: GoogleFonts.roboto(
+                color: isHovered
+                    ? AppColors.facultiesLemonText : const Color(0xFF003366),
+                fontSize: 20,
+                fontWeight: FontWeight.w500,
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
