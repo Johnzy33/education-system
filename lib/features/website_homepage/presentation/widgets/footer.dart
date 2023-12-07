@@ -13,8 +13,8 @@ class FooterPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: context.getWidth(),
-      height: context.getHeight() - 100,
-      padding: const EdgeInsets.only(top: 64, left: 64, bottom: 48),
+      height: context.getHeight() / 2,
+      padding: const EdgeInsets.only(top: 30, left: 64, bottom: 30),
       decoration: const BoxDecoration(color: AppColors.footerBg),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -22,6 +22,7 @@ class FooterPage extends StatelessWidget {
         children: [
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Row(
                 children: [
@@ -44,7 +45,7 @@ class FooterPage extends StatelessWidget {
                 ],
               ),
               const SizedBox(
-                height: 67,
+                height: 37,
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 12.0),
@@ -83,7 +84,7 @@ class FooterPage extends StatelessWidget {
                 ),
               ),
               const SizedBox(
-                height: 67,
+                height: 37,
               ),
               Padding(
                   padding: const EdgeInsets.only(left: 12),
@@ -113,7 +114,7 @@ class FooterPage extends StatelessWidget {
                 ),
               ),
               const SizedBox(
-                height: 99,
+                height: 40,
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 12),
@@ -132,7 +133,7 @@ class FooterPage extends StatelessWidget {
               child: Image.asset(
                   AppImages.lgMapView,
                 width: context.getWidth(),
-                height: context.getHeight() / 3 + 50,
+                height: context.getHeight() / 3,
               ))
         ],
       ),

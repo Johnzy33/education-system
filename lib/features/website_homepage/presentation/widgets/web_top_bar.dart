@@ -1,3 +1,4 @@
+import 'package:education_system/config/routes/routes.dart';
 import 'package:education_system/config/themes/theme_config.dart';
 import 'package:education_system/core/utils/constants.dart';
 import 'package:education_system/core/utils/widget_extensions.dart';
@@ -5,8 +6,15 @@ import 'package:education_system/features/website_homepage/presentation/widgets/
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class WebTopBarView extends StatelessWidget {
+class WebTopBarView extends StatefulWidget {
   const WebTopBarView({super.key});
+
+  @override
+  State<WebTopBarView> createState() => _WebTopBarViewState();
+}
+
+class _WebTopBarViewState extends State<WebTopBarView> {
+  bool isHover = false;
 
   @override
   Widget build(BuildContext context) {
@@ -39,14 +47,32 @@ class WebTopBarView extends StatelessWidget {
             const SizedBox(
               width: 35,
             ),
-            Text(
-              'Study',
-              style: GoogleFonts.inter(
-                color: const Color(0xFF828282),
-                fontSize: 16,
-                fontWeight: FontWeight.w500,
-              ),
-            ),
+            InkWell(
+                onTap: () {},
+                onHover: (hover) {
+                  setState(() {
+                    isHover = hover;
+                  });
+                },
+                child: Container(
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: isHover ? AppColors.blue : Colors.transparent),
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(
+                        horizontal: isHover ? 8.0 : 0.0,
+                        vertical: isHover ? 4.0 : 0.0,
+                    ),
+                    child: Text(
+                      'Study',
+                      style: GoogleFonts.inter(
+                        color: isHover ? AppColors.white : const Color(0xFF828282),
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ),
+                )),
             const SizedBox(
               width: 32,
             ),
@@ -80,7 +106,9 @@ class WebTopBarView extends StatelessWidget {
             ),
             TextView(
               title: "Portal",
-              onTap: () {},
+              onTap: () {
+                navigationService.navigateTo(AppRoutes.webLogin);
+              },
             ),
             const Spacer(),
             const GetInTouchButton(),
@@ -91,24 +119,45 @@ class WebTopBarView extends StatelessWidget {
   }
 }
 
-class TextView extends StatelessWidget {
+class TextView extends StatefulWidget {
   const TextView({super.key, required this.title, required this.onTap});
 
   final String title;
   final Function() onTap;
 
   @override
+  State<TextView> createState() => _TextViewState();
+}
+
+class _TextViewState extends State<TextView> {
+  bool isHover = false;
+
+  @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: onTap,
-      child: Padding(
-        padding: const EdgeInsets.all(4.0),
-        child: Text(
-          title,
-          style: GoogleFonts.inter(
-            color: AppColors.greyText,
-            fontSize: 16,
-            fontWeight: FontWeight.w500,
+      onTap: widget.onTap,
+      onHover: (hover) {
+        setState(() {
+          isHover = hover;
+        });
+      },
+      child: Container(
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20),
+            color: isHover ? AppColors.blue : Colors.transparent),
+        child: Padding(
+          padding: EdgeInsets.symmetric(
+              horizontal: isHover ? 8.0 : 4.0,
+              vertical: isHover ? 5.0 : 4.0,
+          ),
+          child: Text(
+            widget.title,
+            textAlign: TextAlign.center,
+            style: GoogleFonts.inter(
+              color: isHover ? AppColors.lightPrimary : AppColors.greyText,
+              fontSize: 16,
+              fontWeight: FontWeight.w500,
+            ),
           ),
         ),
       ),

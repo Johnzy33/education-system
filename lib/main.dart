@@ -2,11 +2,15 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
+import 'config/routes/locator.dart';
+import 'config/routes/navigation.dart';
+import 'config/routes/routes.dart';
 import 'core/flutter_rust_bridge_generated/ffi.dart'
     if (dart.library.html) 'core/flutter_rust_bridge_generated/ffi_web.dart';
-import 'features/website_homepage/presentation/pages/home_page.dart';
+import 'features/website_homepage/presentation/pages/home/home_page.dart';
 
 void main() {
+  dependenciesInjectorSetup();
   runApp(const MyApp());
 }
 
@@ -19,11 +23,13 @@ class MyApp extends StatelessWidget {
     TargetPlatform platform = Theme.of(context).platform;
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'education system',
+      title: 'Education System',
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
       home: const WebHomePage(),
+      navigatorKey: getIt<NavigationService>().navigatorKey,
+      onGenerateRoute: AppRouter.generateRoute,
     );
   }
 }

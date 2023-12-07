@@ -60,6 +60,7 @@ class _FacultiesAndSchoolsPageState extends State<FacultiesAndSchoolsPage> {
                         text: faculties.toString().trim(),
                         textColor: AppColors.facultiesTextColors[index],
                         color: AppColors.facultiesColors[index],
+                        onTap: () {},
                       ),
                     );
                   }),
@@ -169,34 +170,61 @@ class ProgramsItem extends StatelessWidget {
 }
 
 
-class FacultyItem extends StatelessWidget {
+class FacultyItem extends StatefulWidget {
   const FacultyItem({
     super.key,
     required this.text,
     required this.color,
     required this.textColor,
+    required this.onTap,
   });
 
   final String text;
   final Color color;
   final Color textColor;
+  final Function() onTap;
+
+  @override
+  State<FacultyItem> createState() => _FacultyItemState();
+}
+
+class _FacultyItemState extends State<FacultyItem> {
+  bool isHovered = false;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: 86,
-      decoration: BoxDecoration(color: color),
-      child: RotatedBox(
-        quarterTurns: 3,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 8),
-          child: Text(
-            text,
-            textAlign: TextAlign.start,
-            style: GoogleFonts.inter(
-              color: textColor,
-              fontSize: 60,
-              fontWeight: FontWeight.w400,
+      decoration: ShapeDecoration(
+        color: widget.color,
+        shape: RoundedRectangleBorder(
+          side: BorderSide(
+            width: 8,
+            strokeAlign: BorderSide.strokeAlignCenter,
+            color: isHovered ? AppColors.navyBlue : Colors.transparent,
+          ),
+          borderRadius: BorderRadius.circular(1),
+        ),
+      ),
+      child: InkWell(
+        onTap: widget.onTap,
+        onHover: (hover) {
+          setState(() {
+            isHovered = hover;
+          });
+        },
+        child: RotatedBox(
+          quarterTurns: 3,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 8),
+            child: Text(
+              widget.text,
+              textAlign: TextAlign.start,
+              style: GoogleFonts.inter(
+                color: widget.textColor,
+                fontSize: 60,
+                fontWeight: FontWeight.w400,
+              ),
             ),
           ),
         ),
