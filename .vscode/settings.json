@@ -1,15 +1,7 @@
 {
   "rust-analyzer.linkedProjects": [
-    "./native/Cargo.toml",
-    "./native/Cargo.toml",
-    "./native/Cargo.toml",
-    "./native/Cargo.toml",
-    "./native/Cargo.toml",
-    "./native/Cargo.toml",
-    "./native/Cargo.toml",
-    "./native/Cargo.toml",
-    "./native/Cargo.toml",
-    "./native/Cargo.toml",
-    "./native/Cargo.toml"
-  ]
+    "./rust/Cargo.toml",
+    "./rust/Cargo.toml"
+  ],
+  "rust-analyzer.showUnlinkedFileNotification": false
 }

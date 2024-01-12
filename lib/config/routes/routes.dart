@@ -1,4 +1,4 @@
-import 'package:education_system/features/website_homepage/presentation/pages/login/web_login.dart';
+import 'package:education_system/src/rust/api/features/website_homepage/presentation/pages/login/web_login.dart';
 import 'package:flutter/material.dart';
 
 import '../../core/error/route_error_page.dart';
