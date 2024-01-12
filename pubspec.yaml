@@ -14,7 +14,7 @@ dependencies:
 
   cupertino_icons: ^1.0.2
   ffi: ^2.0.1
-  flutter_rust_bridge: ^1.45.0
+  flutter_rust_bridge: 2.0.0-dev.15
   meta: ^1.8.0
   uuid: ^3.0.7
   get_it: ^7.6.4
@@ -28,13 +28,17 @@ dependencies:
   flutter_dotenv: ^5.1.0
   shared_preferences: ^2.2.2
   equatable: ^2.0.5
+  rust_builder:
+    path: rust_builder
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
   flutter_lints: ^3.0.0
-  ffigen: ">=8.0.0 <9.0.0"
+  ffigen: 10.0.0
+  integration_test:
+    sdk: flutter
 
 flutter:
   uses-material-design: true
