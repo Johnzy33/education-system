@@ -3,7 +3,9 @@ import 'package:education_system/config/themes/theme_config.dart';
 import 'package:education_system/core/utils/constants.dart';
 import 'package:education_system/core/utils/widget_extensions.dart';
 import 'package:education_system/src/rust/api/features/website_homepage/presentation/widgets/get_in_touch_button.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class WebTopBarView extends StatefulWidget {
@@ -24,6 +26,8 @@ class _WebTopBarViewState extends State<WebTopBarView> {
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 80.0, vertical: 7),
         child: Row(
+          // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          // crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Image.asset(
               AppImages.appLogo,
@@ -60,13 +64,14 @@ class _WebTopBarViewState extends State<WebTopBarView> {
                       color: isHover ? AppColors.blue : Colors.transparent),
                   child: Padding(
                     padding: EdgeInsets.symmetric(
-                        horizontal: isHover ? 8.0 : 0.0,
-                        vertical: isHover ? 4.0 : 0.0,
+                      horizontal: isHover ? 8.0 : 0.0,
+                      vertical: isHover ? 4.0 : 0.0,
                     ),
                     child: Text(
                       'Study',
                       style: GoogleFonts.inter(
-                        color: isHover ? AppColors.white : const Color(0xFF828282),
+                        color:
+                            isHover ? AppColors.white : const Color(0xFF828282),
                         fontSize: 16,
                         fontWeight: FontWeight.w500,
                       ),
@@ -147,8 +152,8 @@ class _TextViewState extends State<TextView> {
             color: isHover ? AppColors.blue : Colors.transparent),
         child: Padding(
           padding: EdgeInsets.symmetric(
-              horizontal: isHover ? 8.0 : 4.0,
-              vertical: isHover ? 5.0 : 4.0,
+            horizontal: isHover ? 8.0 : 4.0,
+            vertical: isHover ? 5.0 : 4.0,
           ),
           child: Text(
             widget.title,

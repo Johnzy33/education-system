@@ -8,4 +8,6 @@ crate-type = ["cdylib", "staticlib"]
 
 [dependencies]
 flutter_rust_bridge = "=2.0.0-dev.15"
+serde = { version = "1.0.195", features = ["derive"] }
 surrealdb = "1.1.0"
+tokio = { version = "1.35.1", features = ["macros", "rt-multi-thread"] }

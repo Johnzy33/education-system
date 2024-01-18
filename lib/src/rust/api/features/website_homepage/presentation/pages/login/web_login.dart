@@ -1,3 +1,4 @@
+import 'package:education_system/config/network/network_config.dart';
 import 'package:education_system/core/utils/constants.dart';
 import 'package:education_system/core/utils/widget_extensions.dart';
 import 'package:education_system/src/rust/api/features/common_components/custom_btn.dart';
@@ -21,51 +22,51 @@ class _WebLoginPageState extends State<WebLoginPage> {
     return Scaffold(
       body: SafeArea(
           child: SingleChildScrollView(
-            child: Container(
-              decoration: const BoxDecoration(color: AppColors.facultiesBgColor),
-              height: context.getHeight(),
-              width: context.getWidth(),
-              child: Row(
+        child: Container(
+          decoration: const BoxDecoration(color: AppColors.facultiesBgColor),
+          height: context.getHeight(),
+          width: context.getWidth(),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Image.asset(
-                        AppImages.loginIcon,
-                        height: context.getHeight() - 100,
-                        width: context.getWidth() / 2 + 50,
-                      ),
-                      const SizedBox(
-                        height: 45,
-                      ),
-                      const Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 50.0),
-                        child: Text(
-                          '© 2023 FCEI. All rights reserved.',
-                          style: TextStyle(
-                            color: Color(0xFFF38222),
-                            fontSize: 16,
-                            fontFamily: 'Roboto',
-                            fontWeight: FontWeight.w500,
-                            height: 0.09,
-                          ),
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 45,
-                      ),
-                    ],
+                  Image.asset(
+                    AppImages.loginIcon,
+                    height: context.getHeight() - 100,
+                    width: context.getWidth() / 2 + 50,
                   ),
                   const SizedBox(
-                    width: 30,
+                    height: 45,
                   ),
-                  const LoginView()
+                  const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 50.0),
+                    child: Text(
+                      '© 2023 FCEI. All rights reserved.',
+                      style: TextStyle(
+                        color: Color(0xFFF38222),
+                        fontSize: 16,
+                        fontFamily: 'Roboto',
+                        fontWeight: FontWeight.w500,
+                        height: 0.09,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 45,
+                  ),
                 ],
               ),
-            ),
-          )),
+              const SizedBox(
+                width: 30,
+              ),
+              const LoginView()
+            ],
+          ),
+        ),
+      )),
     );
   }
 }
@@ -102,9 +103,11 @@ class _LoginViewState extends State<LoginView> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Image.asset(AppImages.appLogo,
+                  Image.asset(
+                    AppImages.appLogo,
                     width: 100,
-                    height: 80,),
+                    height: 80,
+                  ),
                 ],
               ),
               const SizedBox(
@@ -127,20 +130,17 @@ class _LoginViewState extends State<LoginView> {
                   color: Colors.white,
                   fontSize: 14,
                   fontWeight: FontWeight.w400,
-                ),),
-                EditTextForm(
-                    hint: "Enter matric number",
-                    onChanged: (value) {
-                      setState(() {
-
-                      });
-                    },
-                    onFieldSubmitted: (value) {
-                      setState(() {
-
-                      });
-                    },
-                    controller: matricNumberController),
+                ),
+              ),
+              EditTextForm(
+                  hint: "Enter matric number",
+                  onChanged: (value) {
+                    setState(() {});
+                  },
+                  onFieldSubmitted: (value) {
+                    setState(() {});
+                  },
+                  controller: matricNumberController),
               const SizedBox(
                 height: 15,
               ),
@@ -155,14 +155,10 @@ class _LoginViewState extends State<LoginView> {
               EditTextForm(
                   hint: "Enter password",
                   onChanged: (value) {
-                    setState(() {
-
-                    });
+                    setState(() {});
                   },
                   onFieldSubmitted: (value) {
-                    setState(() {
-
-                    });
+                    setState(() {});
                   },
                   controller: passwordController),
               const SizedBox(
@@ -179,11 +175,7 @@ class _LoginViewState extends State<LoginView> {
               const SizedBox(
                 height: 22,
               ),
-              AppButton(
-                  title: "Login",
-                  onPressed: () {},
-                  enabled: true
-              ),
+              AppButton(title: "Login", onPressed: () {}, enabled: true),
               const SizedBox(
                 height: 22,
               ),
@@ -238,4 +230,3 @@ class _LoginViewState extends State<LoginView> {
     );
   }
 }
-
