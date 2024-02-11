@@ -1,85 +1,28 @@
-import 'package:education_system/core/utils/constants.dart';
 import 'package:education_system/core/utils/widget_extensions.dart';
-import 'package:education_system/src/rust/api/features/common_components/custom_btn.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../../../../../../../config/routes/routes.dart';
 import '../../../../../../../../config/themes/theme_config.dart';
+import '../../../../../../../../core/utils/constants.dart';
+import '../../../../common_components/custom_btn.dart';
 import '../../../../common_components/input_fields.dart';
 
-class WebLoginPage extends StatefulWidget {
-  const WebLoginPage({super.key});
+class SignUpView extends StatefulWidget {
+  const SignUpView({super.key});
 
   @override
-  State<WebLoginPage> createState() => _WebLoginPageState();
+  State<SignUpView> createState() => _SignUpViewState();
 }
 
-class _WebLoginPageState extends State<WebLoginPage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-          child: SingleChildScrollView(
-        child: Container(
-          decoration: const BoxDecoration(color: AppColors.facultiesBgColor),
-          height: context.getHeight(),
-          width: context.getWidth(),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Image.asset(
-                    AppImages.loginIcon,
-                    height: context.getHeight() - 100,
-                    width: context.getWidth() / 2 + 50,
-                  ),
-                  const SizedBox(
-                    height: 45,
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 50.0),
-                    child: Text(
-                      '© 2023 FCEI. All rights reserved.',
-                      style: TextStyle(
-                        color: Color(0xFFF38222),
-                        fontSize: 16,
-                        fontFamily: 'Roboto',
-                        fontWeight: FontWeight.w500,
-                        height: 0.09,
-                      ),
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 45,
-                  ),
-                ],
-              ),
-              const SizedBox(
-                width: 30,
-              ),
-              const LoginView()
-            ],
-          ),
-        ),
-      )),
-    );
-  }
-}
-
-class LoginView extends StatefulWidget {
-  const LoginView({super.key});
-
-  @override
-  State<LoginView> createState() => _LoginViewState();
-}
-
-class _LoginViewState extends State<LoginView> {
-  final matricNumberController = TextEditingController();
+class _SignUpViewState extends State<SignUpView> {
+  final emailController = TextEditingController();
+  final firstNameController = TextEditingController();
+  final middleNameController = TextEditingController();
+  final surNameController = TextEditingController();
+  final jambRegNumberController = TextEditingController();
+  final phoneNumberController = TextEditingController();
   final passwordController = TextEditingController();
 
   @override
@@ -114,7 +57,7 @@ class _LoginViewState extends State<LoginView> {
                 height: 25,
               ),
               Text(
-                'Login',
+                'Registration',
                 style: GoogleFonts.inter(
                   color: Colors.white,
                   fontSize: 32,
@@ -125,7 +68,7 @@ class _LoginViewState extends State<LoginView> {
                 height: 20,
               ),
               Text(
-                'Matric Number',
+                'Jamb Reg Number',
                 style: GoogleFonts.inter(
                   color: Colors.white,
                   fontSize: 14,
@@ -133,16 +76,96 @@ class _LoginViewState extends State<LoginView> {
                 ),
               ),
               EditTextForm(
-                  hint: "Enter matric number",
+                  hint: "Enter Jamb Reg Number",
                   onChanged: (value) {
                     setState(() {});
                   },
                   onFieldSubmitted: (value) {
                     setState(() {});
                   },
-                  controller: matricNumberController),
+                  controller: jambRegNumberController),
               const SizedBox(
                 height: 15,
+              ),
+              Text(
+                'First Name',
+                style: GoogleFonts.inter(
+                  color: Colors.white,
+                  fontSize: 14,
+                  fontWeight: FontWeight.w400,
+                ),
+              ),
+              EditTextForm(
+                  hint: "Enter Your First Name",
+                  onChanged: (value) {
+                    setState(() {});
+                  },
+                  onFieldSubmitted: (value) {
+                    setState(() {});
+                  },
+                  controller: firstNameController),
+              const SizedBox(
+                height: 10,
+              ),
+              Text(
+                'Middle Name',
+                style: GoogleFonts.inter(
+                  color: Colors.white,
+                  fontSize: 14,
+                  fontWeight: FontWeight.w400,
+                ),
+              ),
+              EditTextForm(
+                  hint: "Enter Your Middle Name",
+                  onChanged: (value) {
+                    setState(() {});
+                  },
+                  onFieldSubmitted: (value) {
+                    setState(() {});
+                  },
+                  controller: middleNameController),
+              const SizedBox(
+                height: 10,
+              ),
+              Text(
+                'Last Name',
+                style: GoogleFonts.inter(
+                  color: Colors.white,
+                  fontSize: 14,
+                  fontWeight: FontWeight.w400,
+                ),
+              ),
+              EditTextForm(
+                  hint: "Enter Your Surname",
+                  onChanged: (value) {
+                    setState(() {});
+                  },
+                  onFieldSubmitted: (value) {
+                    setState(() {});
+                  },
+                  controller: surNameController),
+              const SizedBox(
+                height: 10,
+              ),
+              Text(
+                'Phone Number',
+                style: GoogleFonts.inter(
+                  color: Colors.white,
+                  fontSize: 14,
+                  fontWeight: FontWeight.w400,
+                ),
+              ),
+              EditTextForm(
+                  hint: "Enter Your Phone Number",
+                  onChanged: (value) {
+                    setState(() {});
+                  },
+                  onFieldSubmitted: (value) {
+                    setState(() {});
+                  },
+                  controller: phoneNumberController),
+              const SizedBox(
+                height: 10,
               ),
               Text(
                 'Password',
@@ -165,29 +188,41 @@ class _LoginViewState extends State<LoginView> {
                 height: 10,
               ),
               Text(
-                'Forgot password?',
+                'Confirm Password',
                 style: GoogleFonts.inter(
                   color: Colors.white,
                   fontSize: 14,
                   fontWeight: FontWeight.w400,
                 ),
               ),
+              EditTextForm(
+                  hint: "Enter password again",
+                  onChanged: (value) {
+                    setState(() {});
+                  },
+                  onFieldSubmitted: (value) {
+                    setState(() {});
+                  },
+                  controller: passwordController),
+              const SizedBox(
+                height: 10,
+              ),
               const SizedBox(
                 height: 22,
               ),
-              AppButton(title: "Login", onPressed: () {}, enabled: true),
+              AppButton(title: "Register Student", onPressed: () {}, enabled: true),
               const SizedBox(
                 height: 22,
               ),
               InkWell(
                 onTap: () {
-                  navigationService.navigateTo(AppRoutes.webSignUp);
+                  navigationService.navigateTo(AppRoutes.webLogin);
                 },
                 child: Text.rich(
                   TextSpan(
                     children: [
                       TextSpan(
-                        text: 'Don’t have an account?',
+                        text: 'Already have an account?',
                         style: GoogleFonts.inter(
                           color: const Color(0xFFE0E0E0),
                           fontSize: 16,
@@ -195,7 +230,7 @@ class _LoginViewState extends State<LoginView> {
                         ),
                       ),
                       TextSpan(
-                        text: ' Sign Up',
+                        text: ' Login',
                         style: GoogleFonts.inter(
                           color: Colors.white,
                           fontSize: 16,
