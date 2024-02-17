@@ -14,7 +14,7 @@ dependencies:
 
   cupertino_icons: ^1.0.2
   ffi: ^2.0.1
-  flutter_rust_bridge: 2.0.0-dev.15
+  flutter_rust_bridge: 2.0.0-dev.0
   meta: ^1.8.0
   uuid: ^4.3.2
   get_it: ^7.6.6
