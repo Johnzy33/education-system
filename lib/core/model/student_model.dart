@@ -1,3 +1,5 @@
+import 'package:uuid/uuid.dart';
+
 class TestModel {
   TestModel({required this.marketing, required this.title});
 
@@ -237,3 +239,40 @@ class LocalGuardianModel {
     };
   }
 }
+
+var uuid = const Uuid();
+
+final student = StudentModel(
+    id: uuid.v8(),
+    name: Name(firstName: "Daniel", lastName: "Frank"),
+    gender: "Male",
+    dateOfBirth: "20|03|2000",
+    bloodGroup: "O+",
+    email: "email@gmail.com",
+    phoneNumber: "+23480457684",
+    jambRegNumber: "",
+    contactNo: "21 Ademsy address",
+    role: "UserRole.student.toString()",
+    emergencyContactNo: "23480457600",
+    presentAddress: "21 Present address",
+    permanentAddress: "21 Permanent address",
+    guardian: GuardianModel(
+        fatherName: "Frank",
+        fatherOccupation: "Teacher",
+        fatherContactNo: "+23470345678",
+        motherName: "Grace",
+        motherOccupation: "Mini Seller",
+        motherContactNo: "23470345622",
+        address: "Mothers Address"),
+    localGuardian: LocalGuardianModel(
+        name: "Frank",
+        occupation: "Local man",
+        contactNo: "23470345678",
+        address: "Local man address"),
+    profileImage: "",
+    academicFaculty: "Science",
+    academicDepartment: "Microbiology",
+    academicSemester: "First Semester",
+    createdAt: "DateTime.now()",
+    updatedAt: "DateTime.now()"
+);
