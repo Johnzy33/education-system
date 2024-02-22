@@ -30,6 +30,8 @@ class AppImages {
   static const String loginIcon = "assets/images/login_icon.png";
   static const String iconUp = "assets/images/icon_up.png";
   static const String supportAgent = "assets/images/support_agent.svg";
+  static const String aboutUs = "assets/images/ic_about_us.png";
+  static const String microscope = "assets/images/ic_microscope.svg";
 }
 
 class AppFontSizes {
