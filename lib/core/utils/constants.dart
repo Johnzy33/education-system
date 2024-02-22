@@ -28,6 +28,7 @@ class AppImages {
   static const String youtubeIcon = "assets/images/ic_youtube.svg";
   static const String linkedinIcon = "assets/images/ic_linkedin.svg";
   static const String loginIcon = "assets/images/login_icon.png";
+  static const String iconUp = "assets/images/icon_up.png";
   static const String supportAgent = "assets/images/support_agent.svg";
 }
 

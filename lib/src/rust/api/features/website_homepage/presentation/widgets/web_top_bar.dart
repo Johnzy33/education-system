@@ -83,7 +83,9 @@ class _WebTopBarViewState extends State<WebTopBarView> {
             ),
             TextView(
               title: 'Research',
-              onTap: () {},
+              onTap: () {
+                navigationService.navigateTo(AppRoutes.authProfile);
+              },
             ),
             const SizedBox(
               width: 32,

@@ -14,34 +14,38 @@ import 'package:education_system/src/rust/api/features/website_homepage/presenta
 import 'package:education_system/src/rust/api/features/website_homepage/presentation/widgets/web_top_bar.dart';
 import 'package:flutter/material.dart';
 
-class WebHomePage extends StatefulWidget {
-  const WebHomePage({super.key});
+import '../widgets/auth.profile.dart';
+import '../widgets/student_information.dart';
+
+class ProfilePage extends StatefulWidget {
+   const ProfilePage({super.key});
+
 
   @override
-  State<WebHomePage> createState() => _WebHomePageState();
+  State<ProfilePage> createState() => _ProfilePageState();
 }
 
-class _WebHomePageState extends State<WebHomePage> {
+class _ProfilePageState extends State<ProfilePage> {
+  late double _deviceHeight, _deviceWidth;
+
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    _deviceHeight = MediaQuery.of(context).size.height;
+    _deviceWidth = MediaQuery.of(context).size.width;
+    return  Scaffold(
       body: SafeArea(
           child: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            WebTopBarView(),
-            FindChoiceCourse(),
-            InformationPage(),
-            FacultiesAndSchoolsPage(),
-            DeadLinesPage(),
-            ResearchPage(),
-            LearnMoreAboutSchoolPage(),
-            FooterPage()
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                AuthProfile(),
+                StudentInformation(),
 
-          ],
-        ),
-      )),
+
+
+              ],
+            ),
+          )),
     );
   }
 }
