@@ -1,3 +1,4 @@
+import 'package:education_system/src/rust/api/features/website_homepage/presentation/pages/governance/governance.dart';
 import 'package:education_system/src/rust/api/features/website_homepage/presentation/pages/login/web_login.dart';
 import 'package:education_system/src/rust/api/features/website_homepage/presentation/pages/signup/web_signup.dart';
 import 'package:education_system/src/rust/api/features/website_homepage/presentation/widgets/auth.profile.dart';
@@ -13,6 +14,7 @@ class AppRoutes {
   static const webSignUp = '/signup';
   static const authProfile = '/AuthProfile';
   static const aboutUs = '/aboutUs';
+  static const governance = '/governance';
 }
 
 class AppRouter {
@@ -46,6 +48,12 @@ class AppRouter {
         case AppRoutes.aboutUs:
         return MaterialPageRoute<dynamic>(
           builder: (_) => const AboutUsPage(),
+          settings: settings,
+          fullscreenDialog: true,
+        );
+      case AppRoutes.governance:
+        return MaterialPageRoute<dynamic>(
+          builder: (_) => const GovernancePage(),
           settings: settings,
           fullscreenDialog: true,
         );
