@@ -1,4 +1,4 @@
-import '../../features/website_homepage/data/datasources/local/sharedpreferences.dart';
+import '../../src/rust/api/features/website_homepage/data/datasources/local/sharedpreferences.dart';
 import '../../config/routes/locator.dart';
 import '../../config/routes/navigation.dart';
 
@@ -28,7 +28,10 @@ class AppImages {
   static const String youtubeIcon = "assets/images/ic_youtube.svg";
   static const String linkedinIcon = "assets/images/ic_linkedin.svg";
   static const String loginIcon = "assets/images/login_icon.png";
+  static const String iconUp = "assets/images/icon_up.png";
   static const String supportAgent = "assets/images/support_agent.svg";
+  static const String aboutUs = "assets/images/ic_about_us.png";
+  static const String microscope = "assets/images/ic_microscope.svg";
 }
 
 class AppFontSizes {

@@ -2,10 +2,10 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 
-import '../../features/website_homepage/data/datasources/remote/user_remote.dart';
-import '../../features/website_homepage/data/datasources/remote/user_remote_impl.dart';
-import '../../features/website_homepage/data/repositories/user_repository.dart';
-import '../../features/website_homepage/data/repositories/user_repository_impl.dart';
+import '../../src/rust/api/features/website_homepage/data/datasources/remote/user_remote.dart';
+import '../../src/rust/api/features/website_homepage/data/datasources/remote/user_remote_impl.dart';
+import '../../src/rust/api/features/website_homepage/data/repositories/user_repository.dart';
+import '../../src/rust/api/features/website_homepage/data/repositories/user_repository_impl.dart';
 import 'navigation.dart';
 
 GetIt getIt = GetIt.I;
