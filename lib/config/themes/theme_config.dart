@@ -19,6 +19,7 @@ class AppColors {
   static const editTextBorder = Color(0xFFF2F2F2);
   static const navyBlue = Color(0xFF002346);
   static const textBlackBold = Color(0xFF232222);
+  static const govBackG = Color(0xFFF9FAFB);
 
   static const facultiesBgColor = Color(0xFFF8F9FB);
   static const facultiesGreyColor = Color(0xFFDEDDD3);

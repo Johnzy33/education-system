@@ -1,9 +1,7 @@
 import 'package:education_system/config/routes/routes.dart';
 import 'package:education_system/config/themes/theme_config.dart';
 import 'package:education_system/core/utils/constants.dart';
-import 'package:education_system/src/rust/api/features/common_components/drop_down_menu.dart';
 import 'package:education_system/src/rust/api/features/website_homepage/presentation/widgets/get_in_touch_button.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -60,7 +58,7 @@ class _WebTopBarViewState extends State<WebTopBarView> {
     ).then((value) {
       value == 'About Us'
           ? navigationService.navigateTo(AppRoutes.aboutUs)
-          : debugPrint("Clicked Governance");
+          : navigationService.navigateTo(AppRoutes.governance);
     });
   }
 
