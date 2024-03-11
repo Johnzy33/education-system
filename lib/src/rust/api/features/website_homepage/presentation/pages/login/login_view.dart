@@ -28,7 +28,7 @@ class _LoginViewState extends State<LoginView> {
         width: context.getWidth() / 3 + 100,
         height: context.getHeight() - 100,
         decoration: ShapeDecoration(
-          color: AppColors.blue,
+          color: AppColors.green,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(30),
           ),
@@ -113,7 +113,13 @@ class _LoginViewState extends State<LoginView> {
               const SizedBox(
                 height: 22,
               ),
-              AppButton(title: "Student Login", onPressed: () {}, enabled: true),
+              AppButton(
+                  title: "Student Login", 
+                  onPressed: () {
+                    navigationService.navigateTo(AppRoutes.dashboard);
+                  }, 
+                  enabled: true
+              ),
               const SizedBox(
                 height: 22,
               ),

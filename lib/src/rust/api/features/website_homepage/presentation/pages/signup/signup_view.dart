@@ -33,7 +33,7 @@ class _SignUpViewState extends State<SignUpView> {
         width: context.getWidth() / 3 + 100,
         height: context.getHeight() - 100,
         decoration: ShapeDecoration(
-          color: AppColors.blue,
+          color: AppColors.green,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(30),
           ),

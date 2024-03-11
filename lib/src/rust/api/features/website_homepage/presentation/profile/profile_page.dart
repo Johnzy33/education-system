@@ -24,14 +24,48 @@ class _ProfilePageState extends State<ProfilePage> {
   Widget build(BuildContext context) {
     _deviceHeight = MediaQuery.of(context).size.height;
     _deviceWidth = MediaQuery.of(context).size.width;
-    return  const Scaffold(
+    return Scaffold(
       body: SafeArea(
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                DashboardSideView(),
-                StudentInformation(),
+                DashboardSideView(
+                  fullContent: Container(
+                    padding: const EdgeInsets.all(20.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+
+                      children: [
+                        Container(
+                          width: MediaQuery.of(context).size.width*0.75,
+                          height: 80,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(10),
+                            border: Border.all(
+                              color: Colors.black,
+                              width: 0.5,
+                            ),
+                          ),
+                          child: const Padding(
+                            padding: EdgeInsets.only(bottom: 20),
+                            child: Text(
+                              'Your Text',
+                              style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ), pageTitle: '',
+                ),
+                const StudentInformation(),
               ],
             ),
           )),

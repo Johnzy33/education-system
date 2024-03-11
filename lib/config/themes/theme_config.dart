@@ -8,7 +8,7 @@ class AppColors {
   static const darkGray = Color(0xFF979797);
   static const white = Color(0xFFFFFFFF);
   static const greyText = Color(0xFF828282);
-  static const blue = Color(0xFF006B3A);
+  static const green = Color(0xFF006B3A);
   static const descriptionTextColor = Color(0xFFBDBDBD);
   static const red = Color(0xFFC00418);
   static const boldText = Color(0xFF333333);
@@ -20,6 +20,9 @@ class AppColors {
   static const navyBlue = Color(0xFF002346);
   static const textBlackBold = Color(0xFF232222);
   static const govBackG = Color(0xFFF9FAFB);
+  static const border = Color(0x1A000000);
+  static const bg = Color(0xFFF3F4F5);
+  static const bg2 = Color(0x1AEFEBEB);
 
   static const facultiesBgColor = Color(0xFFF8F9FB);
   static const facultiesGreyColor = Color(0xFFDEDDD3);

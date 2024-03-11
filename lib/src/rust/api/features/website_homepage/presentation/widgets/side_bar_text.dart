@@ -28,10 +28,10 @@ class _SideBarTextViewState extends State<SideBarTextView> {
       child: Container(
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
-            color: isHover ? AppColors.blue : Colors.transparent),
+            color: isHover ? AppColors.green : Colors.transparent),
         child: Padding(
           padding: EdgeInsets.symmetric(
-            horizontal: isHover ? 8.0 : 4.0,
+            horizontal: isHover ? 12.0 : 4.0,
             vertical: isHover ? 5.0 : 4.0,
           ),
           child: Text(

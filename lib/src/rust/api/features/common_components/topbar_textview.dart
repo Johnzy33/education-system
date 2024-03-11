@@ -28,7 +28,7 @@ class _TopBarTextItemState extends State<TopBarTextItem> {
       child: Container(
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
-            color: isHover ? AppColors.blue : Colors.transparent),
+            color: isHover ? AppColors.green : Colors.transparent),
         child: Padding(
           padding: EdgeInsets.symmetric(
             horizontal: isHover ? 8.0 : 4.0,
