@@ -33,7 +33,7 @@ class _InfoItemState extends State<GovTextItem> {
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
           border: Border.all(
-            color: AppColors.blue,
+            color: AppColors.green,
             width: 1.0,
           ),
           color: isHovered ? AppColors.white : Colors.transparent),

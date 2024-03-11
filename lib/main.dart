@@ -26,8 +26,10 @@ class MyApp extends StatelessWidget {
       splitScreenMode: true,
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
+
         title: 'Education System',
         theme: ThemeData(
+          useMaterial3: true,
           primarySwatch: Colors.green,
         ),
         home: const WebHomePage(),

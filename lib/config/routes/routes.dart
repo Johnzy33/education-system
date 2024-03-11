@@ -1,7 +1,7 @@
+import 'package:education_system/src/rust/api/features/website_homepage/presentation/pages/dashboard/dashboard.dart';
 import 'package:education_system/src/rust/api/features/website_homepage/presentation/pages/governance/governance.dart';
 import 'package:education_system/src/rust/api/features/website_homepage/presentation/pages/login/web_login.dart';
 import 'package:education_system/src/rust/api/features/website_homepage/presentation/pages/signup/web_signup.dart';
-import 'package:education_system/src/rust/api/features/website_homepage/presentation/widgets/auth.profile.dart';
 import 'package:flutter/material.dart';
 
 import '../../core/error/route_error_page.dart';
@@ -12,7 +12,7 @@ class AppRoutes {
   static const home = '/home';
   static const webLogin = '/login';
   static const webSignUp = '/signup';
-  static const authProfile = '/AuthProfile';
+  static const dashboard = '/AuthProfile';
   static const aboutUs = '/aboutUs';
   static const governance = '/governance';
 }
@@ -39,9 +39,9 @@ class AppRouter {
           settings: settings,
           fullscreenDialog: true,
         );
-      case AppRoutes.authProfile:
+      case AppRoutes.dashboard:
         return MaterialPageRoute<dynamic>(
-          builder: (_) => AuthProfile(),
+          builder: (_) => const DashBoardScreen(),
           settings: settings,
           fullscreenDialog: true,
         );

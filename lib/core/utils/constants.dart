@@ -32,6 +32,9 @@ class AppImages {
   static const String supportAgent = "assets/images/support_agent.svg";
   static const String aboutUs = "assets/images/ic_about_us.png";
   static const String microscope = "assets/images/ic_microscope.svg";
+  static const String notificationIcon = "assets/images/ic_notification.svg";
+  static const String redDot = "assets/images/ic_red_dot.svg";
+  static const String studentGrads = "assets/images/ic_student_grads.png";
 }
 
 class AppFontSizes {

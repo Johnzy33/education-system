@@ -45,15 +45,8 @@ class _AboutUsPageState extends State<AboutUsPage> {
               Container(
                 height: 4,
                 width: context.getWidth(),
-                color: AppColors.blue,
+                color: AppColors.green,
               ),
-              // Positioned(
-              //   bottom: 100,
-              //   child: SvgPicture.asset(
-              //     AppImages.microscope,
-              //   ),
-              // ),
-
               const Padding(
                 padding: EdgeInsets.symmetric(vertical: 28.0, horizontal: 38),
                 child: Column(

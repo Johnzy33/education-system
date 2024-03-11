@@ -48,7 +48,7 @@ class _WebTopBarViewState extends State<WebTopBarView> {
             child: Container(
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
-                  color: isHover ? AppColors.blue : Colors.transparent),
+                  color: isHover ? AppColors.green : Colors.transparent),
               padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 15.0),
               child: Text(choice),
             ),
@@ -152,7 +152,7 @@ class _WebTopBarViewState extends State<WebTopBarView> {
                 child: Container(
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
-                      color: isHover ? AppColors.blue : Colors.transparent),
+                      color: isHover ? AppColors.green : Colors.transparent),
                   child: Padding(
                     padding: EdgeInsets.symmetric(
                       horizontal: isHover ? 8.0 : 0.0,
@@ -175,7 +175,7 @@ class _WebTopBarViewState extends State<WebTopBarView> {
             TopBarTextItem(
               title: 'Research',
               onTap: () {
-                navigationService.navigateTo(AppRoutes.authProfile);
+
               },
             ),
             const SizedBox(

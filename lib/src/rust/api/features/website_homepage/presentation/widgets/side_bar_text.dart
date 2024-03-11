@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../../../../config/themes/theme_config.dart';
+import '../../../../../../../config/themes/theme_config.dart';
 
-class TopBarTextItem extends StatefulWidget {
-  const TopBarTextItem({super.key, required this.title, required this.onTap});
+class SideBarTextView extends StatefulWidget {
+  const SideBarTextView({super.key, required this.title, required this.onTap});
 
   final String title;
   final Function() onTap;
 
   @override
-  State<TopBarTextItem> createState() => _TopBarTextItemState();
+  State<SideBarTextView> createState() => _SideBarTextViewState();
 }
 
-class _TopBarTextItemState extends State<TopBarTextItem> {
+class _SideBarTextViewState extends State<SideBarTextView> {
   bool isHover = false;
 
   @override
@@ -31,7 +31,7 @@ class _TopBarTextItemState extends State<TopBarTextItem> {
             color: isHover ? AppColors.green : Colors.transparent),
         child: Padding(
           padding: EdgeInsets.symmetric(
-            horizontal: isHover ? 8.0 : 4.0,
+            horizontal: isHover ? 12.0 : 4.0,
             vertical: isHover ? 5.0 : 4.0,
           ),
           child: Text(

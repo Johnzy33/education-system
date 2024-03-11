@@ -16,9 +16,9 @@ class GetInTouchButton extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 10),
         clipBehavior: Clip.antiAlias,
         decoration: ShapeDecoration(
-          color: AppColors.blue,
+          color: AppColors.green,
           shape: RoundedRectangleBorder(
-            side: const BorderSide(width: 1, color: AppColors.blue),
+            side: const BorderSide(width: 1, color: AppColors.green),
             borderRadius: BorderRadius.circular(8),
           ),
         ),

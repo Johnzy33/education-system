@@ -159,7 +159,7 @@ class TextItems extends StatelessWidget {
         Text(
           title,
           style: GoogleFonts.roboto(
-            color: AppColors.blue,
+            color: AppColors.green,
             fontSize: 20,
             fontWeight: FontWeight.w600,
           ),
@@ -173,7 +173,7 @@ class TextItems extends StatelessWidget {
             width: 2,
             height: 34,
             decoration: ShapeDecoration(
-              color: AppColors.blue,
+              color: AppColors.green,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(50),
               ),

@@ -130,7 +130,7 @@ class _AboutSchoolItemsState extends State<AboutSchoolItems> {
                     Text(
                       'Olivia Rhye • 20 Jan 2022',
                       style: GoogleFonts.inter(
-                        color: AppColors.blue,
+                        color: AppColors.green,
                         fontSize: 14,
                         fontWeight: FontWeight.w600,
                       ),

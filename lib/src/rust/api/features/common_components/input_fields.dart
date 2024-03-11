@@ -85,16 +85,16 @@ class SearchForm extends StatelessWidget {
               fontWeight: FontWeight.w400,
               color: AppColors.descriptionTextColor),
           focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(25),
+              borderRadius: BorderRadius.circular(8),
               borderSide: BorderSide(
                 color: AppColors.descriptionTextColor.withOpacity(0.2),
               )),
           enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(25),
+              borderRadius: BorderRadius.circular(8),
               borderSide: BorderSide(
                   color: AppColors.descriptionTextColor.withOpacity(0.2))),
           errorBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(25),
+              borderRadius: BorderRadius.circular(8),
               borderSide: const BorderSide(color: AppColors.red)),
           errorStyle:
               const TextStyle(fontSize: 14, fontWeight: FontWeight.w400),

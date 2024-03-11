@@ -35,7 +35,7 @@ class AppButton extends StatelessWidget {
               child: Text(
                 'Login',
                 style: GoogleFonts.inter(
-                  color: enabled ? AppColors.blue : AppColors.lightPrimary,
+                  color: enabled ? AppColors.green : AppColors.lightPrimary,
                   fontSize: 16,
                   fontWeight: FontWeight.w600,
                 ),
